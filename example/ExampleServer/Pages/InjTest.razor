@@ -1,0 +1,12 @@
+﻿@page "/inj-test"
+@using ExampleServer.ViewModels
+@inject InjTestVm Vm
+
+<h3>MyTest</h3>
+
+@code {
+	protected override void OnInitialized()
+	{
+		Vm.SendSomeLogs();
+	}
+}
