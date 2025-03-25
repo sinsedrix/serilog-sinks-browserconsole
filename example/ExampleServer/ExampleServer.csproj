@@ -5,11 +5,6 @@
   </PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Serilog.Extensions.Logging" Version="9.0.0" />
 		<PackageReference Include="System.Net.Http.Json" Version="9.0.3" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<ProjectReference Include="..\..\src\Serilog.Sinks.BrowserConsole\Serilog.Sinks.BrowserConsole.csproj" />
 	</ItemGroup>
 </Project>

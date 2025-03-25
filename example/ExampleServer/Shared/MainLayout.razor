@@ -1,4 +1,8 @@
-﻿@inherits LayoutComponentBase
+﻿@using ExampleServer.Providers
+@using Microsoft.Extensions.Logging
+@inherits LayoutComponentBase
+@inject IJSRuntime JSRuntime
+@inject ILoggerProvider LoggerProvider
 
 <PageTitle>ExampleServer</PageTitle>
 
@@ -17,3 +21,16 @@
         </article>
     </main>
 </div>
+
+@code {
+    private BrowserConsoleLoggerProvider _loggerProvider;
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            _loggerProvider = LoggerProvider as BrowserConsoleLoggerProvider;
+            _loggerProvider?.SetJsRuntime(JSRuntime);
+        }
+    }
+}
